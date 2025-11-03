@@ -1,9 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
+import GandhiSansRegular from './fontes/GandhiSans-Regular.otf';
+import GandhiSansBold from './fontes/GandhiSans-Bold.otf';
 
 const EstilosGlobais = createGlobalStyle`
-html {
+
+@font-face {
+  font-family: 'GandhiSansRegular' ;
+  src: local('Gandhi Sans Regular'), local('GandhiSansRegular'), url(${GandhiSansRegular});
+}
+
+@font-face {
+  font-family: 'GandhiSansBold' ;
+  src: local('Gandhi Sans Bold'), local('GandhiSansBold'), url(${GandhiSansBold});
+}
+html { 
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
+  font-family: 'GandhiSansRegular';
 }
 body {
   margin: 0;
@@ -81,6 +94,7 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+  appearance: button;
 }
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -122,7 +136,8 @@ textarea {
   height: auto;
 }
 [type="search"] {
-  -webkit-appearance: textfield; 
+  -webkit-appearance: textfield;
+  appearance: textfield;
   outline-offset: -2px; 
 }
 [type="search"]::-webkit-search-decoration {
